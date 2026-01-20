@@ -39,6 +39,15 @@ export const globalStyles = StyleSheet.create({
         fontSize: 14,
         color: Color.textPrimary,
         fontFamily: 'DancingScript',
+    },
+    headerSearch: {
+        backgroundColor: '#eee',
+        paddingHorizontal: 10,
+        borderRadius: 8,
+        width: 160,
+        height: 36,
+        marginRight: 10, 
     }
+
 });
 // para modo oscuro usaremos un contextos

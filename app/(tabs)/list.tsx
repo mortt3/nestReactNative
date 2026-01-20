@@ -1,8 +1,11 @@
 import Notes from '@/components/notes';
-import { ScrollView } from 'react-native';
+import { globalStyles } from '@/styles/global-styles';
+import { useNavigation } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { ScrollView, TextInput } from 'react-native';
 
 const nota = [
-  { id: 1, title: "Pasta ráida", date: "2/3/2025", time: "15 min", difficulty: "Facil", image: '../assets/images/ensalada.png' },
+  { id: 1, title: "Pasta ráida", date: "2/3/2025", time: "15 min", difficulty: "Facil", imageUrl:require('../../assets/images/pasta.png') },
   { id: 2, title: "Ensalada fresca", date: "19/5/2025", time: "10 min", difficulty: "Dificil" },
   { id: 3, title: "Sopa de verduras", date: "10/1/2025", time: "25 min", difficulty: "Facil" },
   { id: 4, title: "Arroz con pollo", date: "15/2/2025", time: "40 min", difficulty: "Media" },
@@ -19,13 +22,31 @@ const nota = [
   ;
 
 export default function List() {
-  return (
-    <ScrollView>
-      {
-        nota.map((item) => (
-          <Notes key={item.id} {...item} />
-        ))
-      }
-    </ScrollView >
+
+  const[search , setSearch] = useState('');
+  const filterNotes = nota.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight:() =>(
+        <TextInput 
+        placeholder='Buscar...' 
+        value={search} 
+        onChangeText={setSearch} 
+        style= {globalStyles.headerSearch}
+        />
+      ),
+    });
+  }, [search,navigation]);
+  return(
+    <>
+      <ScrollView>
+        {
+          filterNotes.map((item) => (
+            <Notes key={item.id} {...item} />
+          ))
+        }
+      </ScrollView >
+    </>
   );
 }

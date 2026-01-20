@@ -8,7 +8,7 @@ interface Note {
     time?: string;
     difficulty?: string;
     text?: string;
-    imageUrl?: string;
+    imageUrl?: number;
 }
 
 export default function Notes({ id, title, date, time, difficulty, text, imageUrl }: Note) {
@@ -20,7 +20,7 @@ export default function Notes({ id, title, date, time, difficulty, text, imageUr
                 <Text style={globalStyles.date}>{date}</Text>
                 
                 <View style={globalStyles.row}>
-                    <Image source={require(imageUrl)} style={globalStyles.image} />
+                    <Image source={imageUrl} style={globalStyles.image} />
                     <View style={globalStyles.details}>
                         <Text style={globalStyles.info}>Tiempo: {time}</Text>
                         <Text style={globalStyles.info}>Dificultad: {difficulty}</Text>
