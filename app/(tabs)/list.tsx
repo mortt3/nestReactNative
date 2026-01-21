@@ -1,13 +1,14 @@
 import Notes from '@/components/notes';
+import { Color } from '@/constants/color';
 import { globalStyles } from '@/styles/global-styles';
 import { useNavigation } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ScrollView, TextInput } from 'react-native';
 
 const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas personales; 
-  {type: 1 ,id: 1, title: "Consejos del hogar", date: "4/1/202",iconList:[{icon:"༄" , text:"ventila tu casa 10 minutos"},
-                                                                          {icon:"🛏️" , text:"Haz la cama 15min despues de levantarte"},
-                                                                          {icon:"🧹" , text:"Limpia los cristales con vinagre blanco"}
+  {type: 1 ,id: 1, title: "Consejos del hogar", date: "4/1/202",iconList:[{ id: 1 ,icon:"༄" , text:"ventila tu casa 10 minutos"},
+                                                                          { id: 2 ,icon:"🛏️" , text:"Haz la cama 15min despues de levantarte"},
+                                                                          { id: 3 ,icon:"🧹" , text:"Limpia los cristales con vinagre blanco"}
                                                                           
   ]},
   {
@@ -16,9 +17,9 @@ const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas p
     title: "Rutina de limpieza",
     date: "05/01/2026",
     iconList: [
-      { icon: "🛏️", text: "Haz la cama" },
-      { icon: "🧼", text: "Lava los platos" },
-      { icon: "🗑️", text: "Saca la basura" },
+      { id: 1 ,icon: "🛏️", text: "Haz la cama" },
+      { id: 2 ,icon: "🧼", text: "Lava los platos" },
+      { id: 3 ,icon: "🗑️", text: "Saca la basura" },
     ],
   },
 
@@ -118,9 +119,9 @@ const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas p
     title: "Cocina limpia",
     date: "06/01/2026",
     iconList: [
-      { icon: "🍽️", text: "Lava los platos al terminar" },
-      { icon: "🧽", text: "Limpia la encimera" },
-      { icon: "🧴", text: "Desinfecta el fregadero" },
+      { id: 1 ,icon: "🍽️", text: "Lava los platos al terminar" },
+      { id: 2 ,icon: "🧽", text: "Limpia la encimera" },
+      { id: 3 ,icon: "🧴", text: "Desinfecta el fregadero" },
     ],
   },
 
@@ -160,9 +161,9 @@ const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas p
     title: "Dormitorio",
     date: "09/01/2026",
     iconList: [
-      { icon: "🛏️", text: "Cambiar sábanas" },
-      { icon: "🪟", text: "Abrir ventanas" },
-      { icon: "🧺", text: "Ordenar ropa" },
+      { id: 1 ,icon: "🛏️", text: "Cambiar sábanas" },
+      { id: 2 ,icon: "🪟", text: "Abrir ventanas" },
+      { id: 3 ,icon: "🧺", text: "Ordenar ropa" },
     ],
   },
 
@@ -202,9 +203,9 @@ const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas p
     title: "Baño",
     date: "13/01/2026",
     iconList: [
-      { icon: "🚿", text: "Limpia la ducha" },
-      { icon: "🪥", text: "Ordena el lavabo" },
-      { icon: "🧻", text: "Revisa papel higiénico" },
+      { id: 1 ,icon: "🚿", text: "Limpia la ducha" },
+      { id: 2 ,icon: "🪥", text: "Ordena el lavabo" },
+      { id: 3 ,icon: "🧻", text: "Revisa papel higiénico" },
     ],
   },
 
@@ -243,8 +244,8 @@ const nota = [ //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas p
     title: "Consejos rápidos",
     date: "17/01/2026",
     iconList: [
-      { icon: "⏰", text: "Organiza tu día la noche anterior" },
-      { icon: "📦", text: "Guarda lo que no uses" },
+      { id: 1 ,icon: "⏰", text: "Organiza tu día la noche anterior" },
+      { id: 2 ,icon: "📦", text: "Guarda lo que no uses" },
     ],
   },
 
@@ -267,6 +268,7 @@ export default function List() {
       headerRight:() =>(
         <TextInput 
         placeholder='Buscar...' 
+        placeholderTextColor= {Color.textSecondary}
         value={search} 
         onChangeText={setSearch} 
         style= {globalStyles.headerSearch}

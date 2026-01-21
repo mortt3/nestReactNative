@@ -53,6 +53,8 @@ export const globalStyles = StyleSheet.create({
         textAlign: 'center',    
         fontSize: 18,          
         marginRight: 6,
+    },checkbox: {
+        marginVertical: 2.5         
     },
 
 });

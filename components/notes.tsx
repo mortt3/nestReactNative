@@ -9,6 +9,7 @@ interface ListItem {
     text: string;
 }
 interface IconListItem {
+    id:number;
     icon: string;
     text: string;
 }
@@ -37,7 +38,7 @@ export default function Notes({ type, title, date, time, difficulty, text, image
                     <View style={globalStyles.details}>
                         <View style={globalStyles.details}>
                             {iconList?.map(item => (
-                                <View  style={globalStyles.row}>
+                                <View key={item.id} style={globalStyles.row}>
                                     <Text style = {globalStyles.icon}>{item.icon}</Text>
                                     <Text style={globalStyles.info}>{item.text}</Text>
                                 </View>
@@ -72,11 +73,16 @@ export default function Notes({ type, title, date, time, difficulty, text, image
             <View style={globalStyles.card}>
                 <Text style={globalStyles.title}>{title}</Text>
                 <Text style={globalStyles.date}>{date}</Text>
+               
                 <View style={globalStyles.row}>
                     <View style={globalStyles.details}>
-                        {list?.map(item => (
-                            <CheckboxRow key={item.id} item={item} />
-                        ))}
+                        
+                            {list?.map(item => (
+                                 <View style={globalStyles.checkbox}>
+                                <CheckboxRow  key={item.id} item={item} />
+                                </View>
+                            ))}
+                        
                     </View>
                 </View>
             </View>
