@@ -47,7 +47,13 @@ export const globalStyles = StyleSheet.create({
         width: 160,
         height: 36,
         marginRight: 10, 
-    }
+    },
+    icon: {
+        width: 26,              
+        textAlign: 'center',    
+        fontSize: 18,          
+        marginRight: 6,
+    },
 
 });
 // para modo oscuro usaremos un contextos
