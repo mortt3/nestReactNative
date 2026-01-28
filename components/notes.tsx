@@ -81,8 +81,8 @@ export default function Notes({ type, title, date, time, difficulty, text, image
                     <View style={globalStyles.details}>
 
                         {list?.map(item => (
-                            <View style={globalStyles.checkbox}>
-                                <CheckboxRow key={item.id} item={item} />
+                            <View key={item.id} style={globalStyles.checkbox}>
+                                <CheckboxRow item={item} />
                             </View>
                         ))}
 
