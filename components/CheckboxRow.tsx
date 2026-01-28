@@ -1,6 +1,7 @@
-import { Color } from '@/constants/color';
+import { useTheme } from '@/context/themeContext';
 import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
+
 import { Text, View } from 'react-native';
 
 interface ListItem {
@@ -9,6 +10,7 @@ interface ListItem {
     text: string;
 }
 export default function CheckboxRow({ item }: { item: ListItem }) {
+    const { colors } = useTheme();
     const [isChecked, setChecked] = useState(item.checkBox);
 
     return (
@@ -16,9 +18,9 @@ export default function CheckboxRow({ item }: { item: ListItem }) {
             <Checkbox
                 value={isChecked}
                 onValueChange={setChecked}
-                color={isChecked ? Color.secondary : undefined}
+                color={isChecked ? colors.secondary : undefined}
             />
-            <Text> {item.text} </Text>
+            <Text style={{ color: colors.textPrimary }}> {item.text} </Text>
         </View>
     );
-}
+} 

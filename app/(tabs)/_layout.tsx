@@ -1,10 +1,22 @@
-import { Color } from '@/constants/color';
+import { useTheme } from '@/context/themeContext';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
 export default function RootLayout() {
+  const { colors } = useTheme();
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: Color.textPrimary }}>
+    <Tabs screenOptions={{
+      tabBarActiveTintColor: colors.textPrimary,
+      tabBarStyle: {
+        backgroundColor: colors.background,
+        borderTopColor: colors.background,
+      },
+      headerStyle: {
+        backgroundColor: colors.background,
+        borderBottomColor: colors.background,
+      },
+      headerTintColor: colors.textPrimary,
+    }}>
       <Tabs.Screen
         name="index"
         options={{

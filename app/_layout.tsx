@@ -1,10 +1,10 @@
 import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
-
-
+import React from 'react';
+import { ThemeProvider } from '../context/themeContext';
 export default function RootLayout() {
   const [loaded] = useFonts({
-    DancingScript: require("../assets/fonts/Roboto-VariableFont_wdth,wght.ttf")
+    Roboto: require("../assets/fonts/Roboto-VariableFont_wdth,wght.ttf")
   });
 
   if (!loaded) {
@@ -12,8 +12,10 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> {/* el headerShown es para mostrar o no mostrar lo de arriba del todo  */}
-    </Stack>
+    <ThemeProvider>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </ThemeProvider>
   );
 }
