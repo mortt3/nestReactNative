@@ -22,8 +22,27 @@ export const createGlobalStyles = (colors: any) =>
             fontFamily: 'Roboto',
             marginBottom: 10,
         },
+        textSetting: {
+            fontSize: 14,
+            color: colors.textSecondary,
+            fontFamily: 'Roboto',
+            marginLeft: 10,
+            marginTop: 10
+        },
+        textVersion: {
+            fontSize: 14,
+            color: colors.textSecondary,
+            fontFamily: 'Roboto',
+            textAlign:'center',
+            marginTop: 10,
+    
+        },
         row: {
             flexDirection: 'row',
+            alignItems: 'center',
+        },
+         column: {
+            flexDirection: 'column',
             alignItems: 'center',
         },
         image: {
@@ -49,13 +68,28 @@ export const createGlobalStyles = (colors: any) =>
             marginRight: 10,
             color: colors.textPrimary,
         },
+       
+        checkbox: {
+            marginVertical: 2.5,
+        },
+         imagePerfil: {
+            width: 60,
+            height: 60,
+            borderRadius: 100,
+            marginRight: 15,
+        },
         icon: {
             width: 26,
             textAlign: 'center',
             fontSize: 18,
             marginRight: 6,
         },
-        checkbox: {
-            marginVertical: 2.5,
+        iconArrowSetting: {
+            marginLeft: 'auto',
+            alignSelf: 'center',
         },
+        iconSetting: {
+            marginRight: 10
+        },
+
     });

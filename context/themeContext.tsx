@@ -19,7 +19,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             value={{
                 theme,
                 colors: themes[theme],
-                toggleTheme: () => { },
             }}
         >
             {children}

@@ -30,7 +30,8 @@ interface Note {
 
 //tipo 1: hogar; tipo 2: recetas; tipo 3: listas; tipo 4: Notas personales; 
 export default function Notes({ type, title, date, time, difficulty, text, imageUrl, list, iconList }: Note) {
-    const { colors } = useTheme();
+    const themeData = useTheme();
+    const colors = themeData.colors;
     const globalStyles = createGlobalStyles(colors);
     if (type == 1) {
         return (
