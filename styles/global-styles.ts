@@ -30,18 +30,18 @@ export const createGlobalStyles = (colors: any) =>
             marginTop: 10
         },
         textVersion: {
-            fontSize: 14,
+            fontSize: 12,
             color: colors.textSecondary,
             fontFamily: 'Roboto',
-            textAlign:'center',
-            marginTop: 10,
-    
+            textAlign: 'center',
+            margin: 20,
+
         },
         row: {
             flexDirection: 'row',
             alignItems: 'center',
         },
-         column: {
+        column: {
             flexDirection: 'column',
             alignItems: 'center',
         },
@@ -68,11 +68,10 @@ export const createGlobalStyles = (colors: any) =>
             marginRight: 10,
             color: colors.textPrimary,
         },
-       
         checkbox: {
             marginVertical: 2.5,
         },
-         imagePerfil: {
+        imagePerfil: {
             width: 60,
             height: 60,
             borderRadius: 100,
@@ -91,5 +90,44 @@ export const createGlobalStyles = (colors: any) =>
         iconSetting: {
             marginRight: 10
         },
+        expandedCard: {
+            flex: 1,
+            borderRadius: 18,
+            margin: 16,
+        },
 
-    });
+        expandedTitle: {
+            fontSize: 24,
+            fontWeight: '700',
+            color: colors.textPrimary,
+            fontFamily: 'Roboto',
+            marginBottom: 6,
+        },
+        expandedText: {
+            fontSize: 16,
+            lineHeight: 24,
+            color: colors.textPrimary,
+            fontFamily: 'Roboto',
+            marginTop: 12,
+        },
+
+
+        metaRow: {
+            flexDirection: 'row',
+            gap: 16,
+            marginBottom: 12,
+        }, metaItem: {
+            fontSize: 14,
+            color: colors.textSecondary,
+            fontFamily: 'Roboto',
+        },
+
+        expandedImage: {
+            width: '100%',
+            height: 200,
+            borderRadius: 16,
+            marginBottom: 16,
+        },
+
+    }
+    );
